@@ -1,0 +1,16 @@
+# Útulna Rychleby
+
+Glamping ubytování v Rychlebských horách.
+Web obsahuje informace o ubytování, ceník, galerii a tipy na výlety.
+
+## Stránky
+- Hlavní strana: index.html
+- Galerie: galerie.html
+- Ceník: cenik.html
+- Tipy na výlety: tipy-na-vylety.html
+- Časté dotazy: caste-dotazy.html
+- Kontakt: kontakt.html
+
+## Kontakt
+Email: provoz@zajedno.cz
+Tel: +420 734 700 195

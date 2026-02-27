@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Útulna Rychleby</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/cookie-banner.css">
+    <script src="js/consent-init.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="Obrazky/LOGO.png" alt="Útulna Rychleby">
+            </a>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Domů</a>
+                <a href="galerie.html" class="nav-link">Galerie</a>
+                <a href="cenik.html" class="nav-link">Ceník</a>
+                <a href="tipy-na-vylety.html" class="nav-link">Výlety</a>
+                <a href="caste-dotazy.html" class="nav-link">FAQ</a>
+                <a href="kontakt.html" class="nav-link active">Kontakt</a>
+                <a href="cenik.html#booking-section" class="nav-link btn btn-primary">Rezervovat</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Unified Subpage Header -->
+        <section class="subpage-hero hero-kontakt">
+            <div class="container fade-in">
+                <div class="editorial-line"></div>
+                <span class="editorial-tag">Spojte se s námi</span>
+                <h1>Kontakt</h1>
+                <p class="hero-lead">Máte dotaz nebo si chcete rovnou rezervovat svůj termín</p>
+            </div>
+        </section>
+
+        <!-- Editorial Introduction -->
+        <section class="container my-grid">
+            <div class="editorial-header fade-in">
+                <div class="editorial-line"></div>
+                <span class="editorial-tag">Kde nás najdete</span>
+                <h2>Jsme tu pro vás</h2>
+                <div class="editorial-intro">
+                    <p>Ať už vás zajímá dostupnost termínů, detaily vybavení nebo potřebujete poradit s cestou,
+                        neváhejte nám poslat zprávu. Abychom zajistili maximální soukromí a klid pro každého našeho
+                        hosta, přesnou polohu Útulny sdělujeme až po dokončení <a href="cenik.html"
+                            style="color: inherit; text-decoration: underline;">rezervace</a>.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Premium Form Section moved up -->
+        <section class="contact-section-wrapper">
+            <div class="container fade-in">
+                <div class="premium-contact-card">
+                    <div class="contact-grid">
+                        <!-- Left Side: Editorial context -->
+                        <div class="contact-form-info">
+                            <span class="editorial-tag">Napište nám</span>
+                            <h2 style="margin-bottom: 2rem;">Zeptejte se na cokoliv</h2>
+                            <div style="margin-top: 1.5rem; line-height: 1.8;">
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                                    <i class="fa-solid fa-phone"
+                                        style="color: var(--color-secondary); width: 25px; margin-top: 5px;"></i>
+                                    <a href="tel:+420731286287" style="color: inherit; text-decoration: none;">+420 731
+                                        286 287</a>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; margin-bottom: 0.5rem;">
+                                    <i class="fa-solid fa-envelope"
+                                        style="color: var(--color-secondary); width: 25px; margin-top: 5px;"></i>
+                                    <a href="mailto:provoz@zajedno.cz"
+                                        style="color: inherit; text-decoration: none;">provoz@zajedno.cz</a>
+                                </div>
+                                <div style="display: flex; align-items: flex-start;">
+                                    <i class="fa-solid fa-location-dot"
+                                        style="color: var(--color-secondary); width: 25px; margin-top: 5px;"></i>
+                                    <span>790 64 Vápenná,<br>Rychlebské hory</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: The actual form -->
+                        <div class="contact-form-body">
+                            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                                <input type="text" name="_gotcha" style="display:none">
+
+                                <div class="form-group">
+                                    <label class="form-label">Jméno a příjmení</label>
+                                    <input type="text" name="name" class="form-input" placeholder="Jak vám máme říkat?"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">E-mailová adresa</label>
+                                    <input type="email" name="email" class="form-input"
+                                        placeholder="Sem pošleme odpověď" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Zpráva</label>
+                                    <textarea name="message" class="form-input"
+                                        placeholder="Co vás zajímá nebo co byste nám chtěli vzkázat?"
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                                    Odeslat zprávu
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section Heading -->
+        <section class="container fade-in" style="text-align: center; padding: 2rem 0 3rem;">
+            <div class="editorial-line" style="margin: 0 auto 1.5rem;"></div>
+            <span class="editorial-tag">Lokalita</span>
+            <h2 style="margin-bottom: 1rem;">Kde nás najdete</h2>
+            <p style="color: #333333; max-width: 800px; margin: 0 auto; line-height: 1.6;">Přesnou polohu na mapě
+                záměrně
+                nezveřejňujeme. Souřadnice k Útulně vám pošleme e-mailem až po potvrzení rezervace. Děláme to proto,
+                abychom místo uchránili před náhodnými kolemjdoucími a vám zaručili naprostý klid.</p>
+        </section>
+
+        <!-- Map section moved down and made Full Width -->
+        <section class="fade-in" style="margin-top: 0; margin-bottom: 0;">
+            <div style="width: 100%; height: 500px; position: relative;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41876.32759976774!2d17.0600!3d50.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4711f7c3c5f5f5f5%3A0x400af0f6615b1e0!2sV%C3%A1penn%C3%A1!5e0!3m2!1scs!2scz!4v1620000000000!5m2!1scs!2scz"
+                    width="100%" height="100%" style="border:0; display: block;" allowfullscreen=""
+                    loading="lazy"></iframe>
+                <!-- Subtle overlay to match the theme if needed, optional -->
+                <div
+                    style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events: none; box-shadow: inset 0 0 100px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" style="margin-top: 0;">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo-link">
+                    <h3>Útulna Rychleby</h3>
+                </a>
+                <p>Místo, kde lišky dávají dobrou noc. Glampingové ubytování v srdci divokých Rychlebských hor.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Prozkoumat</h4>
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="cenik.html">Ceník</a></li>
+                    <li><a href="tipy-na-vylety.html">Výlety v okolí</a></li>
+                    <li><a href="caste-dotazy.html">Časté dotazy</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Kontaktujte nás</h4>
+                <a href="mailto:provoz@zajedno.cz" class="contact-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>provoz@zajedno.cz</span>
+                </a>
+                <a href="tel:+420731286287" class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+420 731 286 287</span>
+                </a>
+                <a href="cenik.html#booking-section" class="btn btn-primary footer-cta">Rezervovat pobyt</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <div class="footer-operator">
+                <p>Provozovatel webu: ZAJEDNO s.r.o. | IČO: 09191933 | Sídlo: Zemkova 1143/4, Žabovřesky, 616 00 Brno
+                    | zapsána pod značkou C 117729/KSBR Krajským soudem v Brně</p>
+            </div>
+            <p>&copy; <span id="current-year">2026</span> Útulna Rychleby. Vytvořeno s láskou k přírodě.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/cookie-banner.js"></script>
+</body>
+
+</html>
