@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Ceník a rezervace | Útulna Rychleby</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -13,6 +14,13 @@
 </head>
 
 <body>
+
+    <!-- Floating Voucher Side Tab -->
+    <a href="#vouchers-section" class="voucher-side-tab" aria-label="Dárkové poukazy">
+        <img src="Obrazky/ikona darkove poukazy.png" alt="" aria-hidden="true">
+        <span>Dárkové poukazy</span>
+    </a>
+
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -38,34 +46,69 @@
                 <div class="editorial-line"></div>
                 <span class="editorial-tag">Ceník a rezervace</span>
                 <h1>Cesta ke klidu <br> začíná zde</h1>
-                <p class="hero-lead">Investujte do svého odpočinku. Útulna není jen ubytování, je to prostor pro váš
-                    vlastní reset a znovunalezení vnitřní rovnováhy</p>
+                <p class="hero-lead">Investujte do svého odpočinku. Útulna není jen ubytování,<br>je to prostor pro váš vlastní reset a znovunalezení vnitřní rovnováhy</p>
             </div>
         </section>
 
         <!-- Booking Engine Section -->
-        <section id="booking-section" class="fade-in" style="padding: 4rem 0 0; background: #fff;">
-            <div class="container">
+        <section id="booking-section" class="fade-in"
+            style="background: var(--color-bg); padding: 5rem 0 4rem; overflow: visible;">
+            <div class="container" style="overflow: visible;">
                 <div class="editorial-header" style="margin-bottom: 3rem;">
                     <div class="editorial-line"></div>
                     <span class="editorial-tag">Rezervace</span>
                     <h2>Vyberte si svůj termín</h2>
                 </div>
 
-                <div id="previo-booking-engine"></div>
                 <script type="text/javascript">
-                    var bookingEngineConfig = {
-                        id: '019c8fbe-9eb1-73e3-ab78-b292a30a6c09',
-                        lang: 'cs',
-                        currency: 'CZK'
-                    };
-                    var a = document.createElement('script'); a.src = 'https://booking.previo.app/loader/'; document.head.appendChild(a);
+                  var bookingEngineConfig = {
+                    id: '019c8fbe-9eb1-73e3-ab78-b292a30a6c09',
+                    lang: 'cs',
+                    currency: 'CZK'
+                  };
+                  var a=document.createElement('script');a.src='https://booking.previo.app/loader/';document.head.appendChild(a);
                 </script>
+                <div id="previo-booking-engine"></div>
+
+                <script>
+                (function () {
+                    var container = document.getElementById('previo-booking-engine');
+                    if (!container) return;
+
+                    var observer = new MutationObserver(function () {
+                        var iframe = container.querySelector('iframe');
+                        if (!iframe) return;
+                        observer.disconnect();
+
+                        window.addEventListener('message', function (e) {
+                            var data = e.data;
+                            var height = null;
+
+                            if (typeof data === 'object' && data !== null) {
+                                height = data.height || data.frameHeight || data.iframeHeight || null;
+                            } else if (typeof data === 'string') {
+                                try {
+                                    var parsed = JSON.parse(data);
+                                    height = parsed.height || parsed.frameHeight || null;
+                                } catch (err) {}
+                            }
+
+                            if (height && +height > 50) {
+                                iframe.style.height = (+height) + 'px';
+                            }
+                        });
+                    });
+
+                    observer.observe(container, { childList: true, subtree: true });
+                })();
+                </script>
+
             </div>
         </section>
 
-        <!-- Pricing Section with Immersive Background -->
-        <section class="pricing-section-bg fade-in">
+        <!-- Pricing Section - Zajišťujeme, aby se nepřekrývala -->
+        <section class="pricing-section-bg fade-in"
+            style="position: relative; z-index: 2; margin-top: 4rem !important; clear: both; display: block;">
             <div class="container">
                 <div class="premium-pricing-card">
                     <div class="editorial-tag" style="color: #fefae0;">Sazba za noc</div>
@@ -106,8 +149,6 @@
                 </div>
             </div>
         </section>
-
-
 
     </main>
 

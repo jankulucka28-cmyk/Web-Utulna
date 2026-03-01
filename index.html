@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Útulna Rychleby | Glamping v divočině</title>
     <meta name="description"
         content="Netradiční ubytování v Rychlebských horách. Útulna schovaná na louce, bez notifikací, jen šumění lesa.">
@@ -25,6 +26,12 @@
 </head>
 
 <body>
+
+    <!-- Floating Voucher Side Tab -->
+    <a href="cenik.html#vouchers-section" class="voucher-side-tab" aria-label="Dárkové poukazy">
+        <img src="Obrazky/ikona darkove poukazy.png" alt="" aria-hidden="true">
+        <span>Dárkové poukazy</span>
+    </a>
 
     <header>
         <div class="container nav-container">
@@ -133,7 +140,7 @@
                             Jakmile vypnete motor, hluk ulic okamžitě vystřídá šumění
                             rychlebských lesů. Místo abyste hned po příjezdu lovili zásoby na dně batohu, můžete si
                             uvařit kávu nebo čaj, které jsme vám tu nechali spolu s pár dobrotami.</p>
-                        <i class="fa-solid fa-leaf ref-icon"></i>
+                        <img src="Obrazky/ikona vitejte.png" alt="" aria-hidden="true" class="ref-icon-img">
                     </div>
                     <div class="ref-img-box">
                         <img src="Obrazky/vitejte%20v%20utulne.jpeg" alt="Vítejte v Útulně"
@@ -154,7 +161,7 @@
                         <p>Tady vás neprobudí pípání telefonu, ale slunce, které se prodírá skrz větve. Otevřete oči a z
                             vyhřáté postele se díváte rovnou do lesa. Pak už jen vstanete, uvaříte si kávu a s horkým
                             hrnkem v ruce vyjdete bosky přímo do orosené trávy. Dnešní jediný úkol? Nikam nespěchat.</p>
-                        <i class="fa-solid fa-shoe-prints ref-icon"></i>
+                        <img src="Obrazky/ikona rano ve vlastnim tempu.png" alt="" aria-hidden="true" class="ref-icon-img">
                     </div>
                 </div>
 
@@ -169,7 +176,7 @@
                             vyhrazené jen pro sebe. Také jsme pro vás připravili <a href="tipy-na-vylety.html"
                                 style="color: inherit; text-decoration: underline;">tipy na výlety v Rychlebských
                                 horách</a>.</p>
-                        <i class="fa-solid fa-campground ref-icon"></i>
+                        <img src="Obrazky/ikona divoke rychleby.png" alt="" aria-hidden="true" class="ref-icon-img">
                     </div>
                     <div class="ref-img-box">
                         <img src="Obrazky/zatopene%20lomy.jpeg" alt="Zatopené lomy v Rychlebech"
@@ -191,7 +198,7 @@
                             připravené společenské hry a speciální konverzační karty pro páry od Smyslno. Jsou navržené
                             tak, aby vás sblížily, otevřely nová témata a vytvořily večer, na který budete dlouho
                             vzpomínat.</p>
-                        <i class="fa-solid fa-comments ref-icon"></i>
+                        <img src="Obrazky/ikona hry pro hlubsi spojeni .png" alt="" aria-hidden="true" class="ref-icon-img">
                     </div>
                 </div>
 
@@ -205,13 +212,13 @@
                             dobrého k pití, posloucháte praskající dřevo a sledujete, jak se nad stromy pomalu objevují
                             hvězdy. Až oheň dohoří, přesunete se do velké vyhřáté postele, odkud můžete pozorovat noční
                             oblohu.</p>
-                        <a href="cenik.html" class="btn btn-primary story-btn">Tohle potřebuju</a>
-                        <i class="fa-solid fa-fire ref-icon"></i>
+                        <img src="Obrazky/ikona ohen misto obrazovek.png" alt="" aria-hidden="true" class="ref-icon-img">
                     </div>
                     <div class="ref-img-box">
                         <img src="Obrazky/ohen%20misto%20obrazovek.jpeg" alt="Oheň místo obrazovek"
                             class="landscape-img shadow-img">
                     </div>
+                    <a href="cenik.html" class="btn btn-primary story-btn">Tohle potřebuju</a>
                 </div>
 
             </div>
@@ -237,52 +244,52 @@
                 <img src="Obrazky/piny.jpeg" alt="Vybavení Útulny" class="pin-bg-img" loading="lazy">
 
                 <!-- 1. Kuchyňské náčiní -->
-                <div class="pin-marker" style="top: 35%; left: 15%;">
+                <div id="pin-kuchyne" class="pin-marker" style="top: 35%; left: 15%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Kuchyňské náčiní</div>
                 </div>
                 <!-- 2. Káva a čaj -->
-                <div class="pin-marker" style="top: 55%; left: 25%;">
+                <div id="pin-kava" class="pin-marker" style="top: 55%; left: 25%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Káva a čaj</div>
                 </div>
                 <!-- 3. Plynový vařič -->
-                <div class="pin-marker" style="top: 65%; left: 30%;">
+                <div id="pin-varic" class="pin-marker" style="top: 65%; left: 30%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Plynový vařič</div>
                 </div>
                 <!-- 4. Toaleta -->
-                <div class="pin-marker" style="top: 60%; left: 80%;">
+                <div id="pin-toaleta" class="pin-marker" style="top: 60%; left: 80%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Toaleta</div>
                 </div>
                 <!-- 5. Drobné občerstvení -->
-                <div class="pin-marker" style="top: 40%; left: 40%;">
+                <div id="pin-obcerstveni" class="pin-marker" style="top: 40%; left: 40%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Drobné občerstvení</div>
                 </div>
                 <!-- 6. Povlečení -->
-                <div class="pin-marker" style="top: 70%; left: 50%;">
+                <div id="pin-povleceni" class="pin-marker" style="top: 70%; left: 50%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Povlečení</div>
                 </div>
                 <!-- 7. Umyvadlo s tekoucí vodou -->
-                <div class="pin-marker" style="top: 50%; left: 60%;">
+                <div id="pin-voda" class="pin-marker" style="top: 50%; left: 60%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Umyvadlo s tekoucí vodou</div>
                 </div>
                 <!-- 8. Vytápění -->
-                <div class="pin-marker" style="top: 85%; left: 50%;">
+                <div id="pin-vytapeni" class="pin-marker" style="top: 85%; left: 50%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Vytápění</div>
                 </div>
                 <!-- 9. Věšák a botník -->
-                <div class="pin-marker" style="top: 30%; left: 70%;">
+                <div id="pin-vesak" class="pin-marker" style="top: 30%; left: 70%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Věšák a botník</div>
                 </div>
                 <!-- 10. Baterka -->
-                <div class="pin-marker" style="top: 55%; left: 45%;">
+                <div id="pin-baterka" class="pin-marker" style="top: 55%; left: 45%;">
                     <div class="pin-dot"></div>
                     <div class="pin-label">Baterka</div>
                 </div>
@@ -290,7 +297,7 @@
         </section>
 
         <!-- Interior Intro: Editorial Transition -->
-        <section id="amenities-intro" class="container fade-in" style="padding-top: 0; margin-bottom: 0;">
+        <section id="amenities-intro" class="container fade-in" style="padding-top: 5rem; margin-bottom: 0;">
             <div class="editorial-header">
                 <div class="editorial-line"></div>
                 <span class="editorial-tag">Detaily, které tvoří domov</span>

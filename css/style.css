@@ -136,7 +136,7 @@ img {
 }
 
 .my-grid {
-    margin: 6rem auto;
+    margin: 5rem auto;
 }
 
 .fade-in {
@@ -989,7 +989,7 @@ header.scrolled {
 
 /* Footer CTA & Editorial Spacing */
 .footer-cta-editorial {
-    padding: 3rem 0 6rem;
+    padding: 5rem 0 6rem;
     text-align: center;
     background: var(--color-bg);
 }
@@ -1004,6 +1004,10 @@ header.scrolled {
 
 .editorial-cta-wrapper {
     margin-top: 2.5rem;
+}
+
+.footer-cta-editorial .editorial-cta-wrapper {
+    margin-top: 1.2rem;
 }
 
 /* Footer */
@@ -1323,17 +1327,20 @@ header.scrolled {
     padding-bottom: 1.5rem;
 }
 
-/* Fix Previo Booking Engine Gap */
-iframe[id*="previo-booking-iframe"] {
-    min-height: 500px;
-    height: 1250px;
+/* Dynamické přizpůsobení Previa - čistý tok */
+#previo-booking-engine iframe {
     width: 100% !important;
-    overflow: auto !important;
+    border: none;
+    display: block;
+    margin: 0;
+    transition: height 0.3s ease;
 }
 
 
 .pricing-section-bg {
-    padding: 5rem 0 4rem;
+    padding: 4rem 0;
+    /* Standardní odsazení bez hacků */
+    margin-top: 0 !important;
     position: relative;
     background-color: var(--color-bg);
 }
@@ -1692,7 +1699,21 @@ textarea.form-input {
 
 /* Light Theme Editorial Adaptations */
 #features-intro {
-    padding: 3rem 0 1rem;
+    padding: 6rem 0 1rem;
+}
+
+@media (max-width: 768px) {
+    #features-intro {
+        padding-top: 4.5rem !important;
+    }
+
+    #amenities-intro {
+        padding-top: 2.5rem !important;
+    }
+
+    .footer-cta-editorial {
+        padding-top: 3.5rem !important;
+    }
 }
 
 #features-intro .editorial-header {
@@ -1707,7 +1728,7 @@ textarea.form-input {
 #trips-intro-dark {
     background: #1a2310;
     color: #fefae0;
-    padding: 3rem 0 6rem;
+    padding: 5rem 0 6rem;
     /* Matched to #experience-lifestyle */
     margin-bottom: 0;
 }
@@ -1862,6 +1883,46 @@ textarea.form-input {
     transition: 0.5s ease;
 }
 
+.ref-icon-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    opacity: 0.25;
+    position: absolute;
+    right: 0;
+    bottom: -5rem;
+    transition: 0.5s ease;
+}
+
+.ref-item:hover .ref-icon-img {
+    opacity: 0.6;
+    transform: translateY(-5px);
+}
+
+.item-2 .ref-icon-img {
+    width: 120px;
+    height: 120px;
+    bottom: -7rem;
+}
+
+.item-3 .ref-icon-img {
+    width: 150px;
+    height: 150px;
+    bottom: -7rem;
+}
+
+.item-4 .ref-icon-img {
+    width: 115px;
+    height: 115px;
+    bottom: -6rem;
+}
+
+.item-5 .ref-icon-img {
+    width: 120px;
+    height: 120px;
+    bottom: -6rem;
+}
+
 .ref-item:hover .ref-icon {
     opacity: 0.6;
     transform: translateY(-5px);
@@ -1916,12 +1977,24 @@ textarea.form-input {
 
 /* Adjust Icons position for specific steps */
 .item-2 .ref-icon {
-    bottom: -1rem;
+    bottom: -4rem;
 }
 
-.item-4 .ref-icon,
+.item-4 .ref-icon {
+    bottom: -4rem;
+}
+
 .item-5 .ref-icon {
-    bottom: -1rem;
+    display: none;
+}
+
+/* Desktop: story-btn přesunuté mimo ref-text-box — umístit pod text v prvním sloupci gridu */
+.item-5 > .story-btn {
+    grid-column: 1;
+    align-self: start;
+    justify-self: start;
+    width: fit-content;
+    margin-top: -1rem;
 }
 
 /* Parallax-like floating details */
@@ -2107,18 +2180,36 @@ textarea.form-input {
         transform: scale(0.7);
     }
 
+    /* Mobilní rozložení pinů — 3 sloupce, bez překryvů */
+    /* Levý sloupec (left ~22%) */
+    #pin-kuchyne  { top: 12% !important; left: 22% !important; }
+    #pin-kava     { top: 42% !important; left: 22% !important; }
+    #pin-varic    { top: 68% !important; left: 22% !important; }
+    #pin-vytapeni { top: 85% !important; left: 22% !important; }
+
+    /* Střední sloupec (left ~50%) */
+    #pin-obcerstveni { top: 22% !important; left: 50% !important; }
+    #pin-povleceni   { top: 50% !important; left: 50% !important; }
+
+    /* Pravý sloupec (left ~76%) */
+    #pin-vesak    { top: 10% !important; left: 76% !important; }
+    #pin-baterka  { top: 32% !important; left: 76% !important; }
+    #pin-toaleta  { top: 56% !important; left: 76% !important; }
+    #pin-voda     { top: 78% !important; left: 72% !important; }
+
     .pin-dot {
         width: 16px;
         height: 16px;
     }
 
     .pin-label {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.6rem;
+        font-size: 0.88rem;
+        padding: 0.8rem 1.3rem;
         width: max-content;
         max-width: 140px;
         white-space: normal;
         line-height: 1.2;
+        text-align: center;
     }
 }
 
@@ -2301,7 +2392,6 @@ html {
     /* Reduced bottom gap on homepage */
 }
 
-
 .subpage-hero::before {
     content: "";
     position: absolute;
@@ -2361,18 +2451,17 @@ html {
     font-size: clamp(3.5rem, 11vw, 5rem) !important;
     font-weight: 700 !important;
     color: var(--color-white) !important;
-    margin-bottom: 2.5rem !important;
+    margin-bottom: 1.6rem !important;
     line-height: 1.1 !important;
     letter-spacing: -1.5px !important;
     text-align: center !important;
 }
 
 .subpage-hero .hero-lead {
-    font-family: var(--font-base);
-    font-size: 1.35rem;
-    /* Increased from 1.05rem */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
     line-height: 1.6;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-white);
     opacity: 0.95;
     max-width: 800px;
@@ -2410,17 +2499,27 @@ html {
     background-image: url('../Obrazky/Kontakt uvodni.jpeg');
 }
 
-/* Sjednocení výšky podstránek (mimo homepage) - synchronizace s .subpage-hero */
+/* Sjednocení výšky podstránek (mimo homepage) */
 .hero-galerie,
 .hero-cenik,
 .hero-vylety,
 .hero-faq,
 .hero-kontakt {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
+    padding-top: 8rem !important;
+    padding-bottom: 14rem !important;
+}
+
+.hero-galerie,
+.hero-cenik {
+    padding-bottom: 7rem !important;
+}
+
+.hero-galerie .hero-lead,
+.hero-vylety .hero-lead,
+.hero-faq .hero-lead,
+.hero-kontakt .hero-lead,
+.hero-cenik .hero-lead {
+    font-size: 1.2rem;
 }
 
 .subpage-hero::after {
@@ -2488,6 +2587,12 @@ html {
         padding-bottom: 2rem !important;
     }
 
+    .hero-vylety,
+    .hero-faq,
+    .hero-kontakt {
+        padding-bottom: 10rem !important;
+    }
+
     .my-grid {
         margin: 3.5rem auto 2rem !important;
     }
@@ -2548,6 +2653,14 @@ html {
         font-size: 1.3rem !important;
         max-width: 90% !important;
         margin-bottom: 2.5rem !important;
+    }
+
+    .hero-galerie .hero-lead,
+    .hero-cenik .hero-lead,
+    .hero-vylety .hero-lead,
+    .hero-faq .hero-lead,
+    .hero-kontakt .hero-lead {
+        font-size: 1.1rem !important;
     }
 
     .hero-btns {
@@ -2743,6 +2856,10 @@ html {
         opacity: 0.3 !important;
     }
 
+    .ref-icon-img {
+        display: none !important;
+    }
+
     .time-tag {
         font-size: 0.85rem !important;
         margin-bottom: 0.5rem !important;
@@ -2839,6 +2956,13 @@ html {
         order: 2 !important;
     }
 
+    .item-5 .ref-icon {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        text-align: right !important;
+    }
+
     .item-5 .story-btn {
         order: 3 !important;
         margin-top: 1rem !important;
@@ -2908,5 +3032,79 @@ html {
         margin-bottom: 0.3rem !important;
         text-align: center !important;
         width: 100% !important;
+    }
+}
+
+/* --- Floating Voucher Side Tab --- */
+.voucher-side-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    text-decoration: none;
+
+    padding: 0.9rem 0.6rem;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -3px 3px 16px rgba(0, 0, 0, 0.2);
+
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.voucher-side-tab:hover {
+    background-color: var(--color-primary);
+    box-shadow: -5px 4px 22px rgba(0, 0, 0, 0.28);
+    color: var(--color-white);
+    text-decoration: none;
+    padding-right: 0.9rem;
+}
+
+.voucher-side-tab i {
+    font-size: 1.15rem;
+}
+
+.voucher-side-tab img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.voucher-side-tab span {
+    font-family: var(--font-base);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .voucher-side-tab {
+        padding: 0.6rem 0.4rem;
+        gap: 0.3rem;
+    }
+
+    .voucher-side-tab i {
+        font-size: 0.8rem;
+    }
+
+    .voucher-side-tab img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .voucher-side-tab span {
+        font-size: 0.5rem;
+        letter-spacing: 0.08em;
     }
 }

@@ -2,8 +2,10 @@ ErrorDocument 404 /404.html
 
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
+    # Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header set X-Robots-Tag "noindex, nofollow"
+    # Header set Content-Security-Policy "frame-src 'self' https://*.previo.app https://booking.previo.app;"
 </IfModule>
