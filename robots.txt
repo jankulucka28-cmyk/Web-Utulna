@@ -1,4 +1,6 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /js/
+Disallow: /css/
 
 Sitemap: https://utulna-rychleby.cz/sitemap.xml

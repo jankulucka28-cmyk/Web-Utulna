@@ -10,6 +10,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/cookie-banner.css">
     <script src="js/consent-init.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Campground",
+          "name": "Útulna Rychleby",
+          "url": "https://utulna-rychleby.cz",
+          "telephone": "+420731286287",
+          "email": "provoz@zajedno.cz",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vápenná",
+            "postalCode": "790 64",
+            "addressCountry": "CZ",
+            "addressRegion": "Olomoucký kraj"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.2833",
+            "longitude": "17.0600"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+420731286287",
+            "email": "provoz@zajedno.cz",
+            "contactType": "reservations",
+            "availableLanguage": "Czech"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Domů", "item": "https://utulna-rychleby.cz" },
+            { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://utulna-rychleby.cz/kontakt" }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>

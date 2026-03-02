@@ -22,6 +22,71 @@
     <meta property="og:image" content="Obrazky/1.jpg">
     <link rel="stylesheet" href="css/cookie-banner.css">
     <script src="js/consent-init.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://utulna-rychleby.cz/#website",
+          "url": "https://utulna-rychleby.cz",
+          "name": "Útulna Rychleby",
+          "description": "Netradiční ubytování v Rychlebských horách. Útulna schovaná na louce, bez notifikací, jen šumění lesa.",
+          "inLanguage": "cs"
+        },
+        {
+          "@type": "Campground",
+          "@id": "https://utulna-rychleby.cz/#business",
+          "name": "Útulna Rychleby",
+          "description": "Glampingové ubytování v srdci divokých Rychlebských hor. Dřevěná chatka na louce pro dva, s ohništěm, kuchyňkou a výhledem do lesa.",
+          "url": "https://utulna-rychleby.cz",
+          "telephone": "+420731286287",
+          "email": "provoz@zajedno.cz",
+          "image": "https://utulna-rychleby.cz/Obrazky/uvodni.jpeg",
+          "priceRange": "2550 CZK / noc",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vápenná",
+            "postalCode": "790 64",
+            "addressCountry": "CZ",
+            "addressRegion": "Olomoucký kraj"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.2833",
+            "longitude": "17.0600"
+          },
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Ohniště", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Kuchyňka", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Ložnice pro 2 osoby", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Toaleta", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Vytápění", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "USB nabíjení", "value": true }
+          ],
+          "numberOfRooms": 1,
+          "petsAllowed": false,
+          "sameAs": [
+            "https://www.facebook.com",
+            "https://www.instagram.com"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Domů",
+              "item": "https://utulna-rychleby.cz"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>

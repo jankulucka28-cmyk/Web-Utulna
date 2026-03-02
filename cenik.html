@@ -10,6 +10,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/cookie-banner.css">
     <script src="js/consent-init.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Offer",
+          "name": "Pronájem Útulny Rychleby na noc",
+          "description": "Pronájem celé glamping chatky pro dvě osoby včetně ohniště, kuchyňky, ložnice, toalety a všech energií.",
+          "url": "https://utulna-rychleby.cz/cenik",
+          "price": "2550",
+          "priceCurrency": "CZK",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "2550",
+            "priceCurrency": "CZK",
+            "unitText": "noc"
+          },
+          "seller": {
+            "@type": "Campground",
+            "name": "Útulna Rychleby",
+            "url": "https://utulna-rychleby.cz"
+          },
+          "itemOffered": {
+            "@type": "LodgingBusiness",
+            "name": "Útulna Rychleby – glamping pro dva",
+            "numberOfRooms": 1,
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "maxValue": 2
+            }
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Domů", "item": "https://utulna-rychleby.cz" },
+            { "@type": "ListItem", "position": 2, "name": "Ceník a rezervace", "item": "https://utulna-rychleby.cz/cenik" }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
