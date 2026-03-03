@@ -67,10 +67,24 @@ h6 {
 
 /* Headings over Dark Backgrounds */
 .subpage-hero h1,
+.subpage-hero h2,
 .premium-pricing-card h2,
 .detail-block h3,
 #experience-lifestyle h2 {
     color: #fefae0 !important;
+}
+
+/* Homepage hero h2 in pure white */
+.hero-home h2 {
+    color: #ffffff !important;
+}
+
+/* Hero h2 visually matches original h1 */
+.subpage-hero h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
 }
 
 h1 {
@@ -172,6 +186,17 @@ img {
 
 .btn-primary:hover {
     background-color: #a3561a;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-3px);
 }
 
@@ -420,7 +445,7 @@ header.scrolled {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-top: 2rem;
     position: relative;
     z-index: 5;
@@ -476,6 +501,17 @@ header.scrolled {
 .feature-pill:hover .feature-text h4,
 .feature-pill:hover .feature-text span {
     color: var(--color-primary);
+}
+
+.feature-circle img {
+    width: 2.6rem;
+    height: 2.6rem;
+    object-fit: contain;
+}
+
+.feature-pill:nth-child(4) .feature-circle img {
+    width: 3.1rem;
+    height: 3.1rem;
 }
 
 .feature-circle {
@@ -1357,15 +1393,43 @@ header.scrolled {
     text-align: center;
 }
 
+.pricing-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.pricing-split-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.pricing-split-label {
+    font-family: var(--font-base);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(254, 250, 224, 0.6);
+}
+
+.pricing-split-divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(254, 250, 224, 0.2);
+}
+
 .pricing-value {
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
     color: #bc6c25;
-    line-height: 1.2;
-    /* Better baseline alignment */
-    margin: 2rem 0 1.2rem;
-    /* More space around the price */
+    line-height: 1.1;
+    margin: 0;
 }
 
 .pricing-subtext {
@@ -2663,8 +2727,15 @@ html {
         font-size: 1.1rem !important;
     }
 
+    .hero-home h2 {
+        font-size: 2.2rem !important;
+        text-align: center;
+    }
+
     .hero-btns {
         margin-bottom: 2.5rem !important;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* Homepage Hero Centering (Mobile Only) */
@@ -2686,6 +2757,22 @@ html {
 
     .hero-features {
         padding-top: 1.5rem !important;
+        flex-wrap: wrap !important;
+        gap: 0.8rem !important;
+    }
+
+    .hero-features .feature-pill {
+        flex: 1 1 calc(50% - 0.4rem);
+        min-width: 0;
+    }
+
+    .hero-features .feature-pill h4,
+    .hero-features .feature-pill span {
+        white-space: nowrap;
+    }
+
+    .hero-features .feature-pill span {
+        font-size: 0.65rem;
     }
 
     /* Remove padding from nested containers to keep one 'tunnel' line */

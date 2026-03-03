@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceník a rezervace | Útulna Rychleby</title>
+    <meta name="description" content="Ceník glamping ubytování Útulna Rychleby. Romantická chatka v Rychlebských horách od 1 800 Kč/noc. Rezervujte si termín ještě dnes.">
+    <link rel="canonical" href="https://utulna-rychleby.cz/cenik">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://utulna-rychleby.cz/cenik">
+    <meta property="og:title" content="Ceník a rezervace | Útulna Rychleby">
+    <meta property="og:description" content="Ceník glamping ubytování Útulna Rychleby. Romantická chatka v Rychlebských horách od 1 800 Kč/noc. Rezervujte si termín ještě dnes.">
+    <meta property="og:image" content="https://utulna-rychleby.cz/Obrazky/nahled%20socialni%20site.jpg">
+    <meta property="og:locale" content="cs_CZ">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,14 +32,14 @@
       "@graph": [
         {
           "@type": "Offer",
-          "name": "Pronájem Útulny Rychleby na noc",
-          "description": "Pronájem celé glamping chatky pro dvě osoby včetně ohniště, kuchyňky, ložnice, toalety a všech energií.",
+          "name": "Pronájem Útulny Rychleby – všední den",
+          "description": "Pronájem celé glamping chatky pro dvě osoby (Po–Čt) včetně ohniště, kuchyňky, ložnice, toalety a všech energií.",
           "url": "https://utulna-rychleby.cz/cenik",
-          "price": "2550",
+          "price": "1800",
           "priceCurrency": "CZK",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "2550",
+            "price": "1800",
             "priceCurrency": "CZK",
             "unitText": "noc"
           },
@@ -38,10 +52,32 @@
             "@type": "LodgingBusiness",
             "name": "Útulna Rychleby – glamping pro dva",
             "numberOfRooms": 1,
-            "occupancy": {
-              "@type": "QuantitativeValue",
-              "maxValue": 2
-            }
+            "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pronájem Útulny Rychleby – víkend",
+          "description": "Pronájem celé glamping chatky pro dvě osoby (Pá–Ne) včetně ohniště, kuchyňky, ložnice, toalety a všech energií.",
+          "url": "https://utulna-rychleby.cz/cenik",
+          "price": "2400",
+          "priceCurrency": "CZK",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "2400",
+            "priceCurrency": "CZK",
+            "unitText": "noc"
+          },
+          "seller": {
+            "@type": "Campground",
+            "name": "Útulna Rychleby",
+            "url": "https://utulna-rychleby.cz"
+          },
+          "itemOffered": {
+            "@type": "LodgingBusiness",
+            "name": "Útulna Rychleby – glamping pro dva",
+            "numberOfRooms": 1,
+            "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
           }
         },
         {
@@ -87,9 +123,9 @@
         <section class="subpage-hero hero-cenik">
             <div class="container fade-in">
                 <div class="editorial-line"></div>
-                <span class="editorial-tag">Ceník a rezervace</span>
-                <h1>Cesta ke klidu <br> začíná zde</h1>
-                <p class="hero-lead">Investujte do svého odpočinku. Útulna není jen ubytování,<br>je to prostor pro váš vlastní reset a znovunalezení vnitřní rovnováhy</p>
+                <h1 class="editorial-tag">Ceník a rezervace</h1>
+                <h2>Cesta ke klidu <br> začíná zde</h2>
+                <h3 class="hero-lead">Investujte do svého odpočinku. Útulna není jen ubytování,<br>je to prostor pro váš vlastní reset a znovunalezení vnitřní rovnováhy</h3>
             </div>
         </section>
 
@@ -156,7 +192,17 @@
                 <div class="premium-pricing-card">
                     <div class="editorial-tag" style="color: #fefae0;">Sazba za noc</div>
                     <h2>Pronájem celé Útulny</h2>
-                    <div class="pricing-value">2 550 Kč</div>
+                    <div class="pricing-split">
+                        <div class="pricing-split-item">
+                            <span class="pricing-split-label">Po – Čt</span>
+                            <div class="pricing-value">1 800 Kč</div>
+                        </div>
+                        <div class="pricing-split-divider"></div>
+                        <div class="pricing-split-item">
+                            <span class="pricing-split-label">Pá – Ne</span>
+                            <div class="pricing-value">2 400 Kč</div>
+                        </div>
+                    </div>
                     <p class="pricing-subtext">
                         Včetně všech poplatků a energií</p>
 
