@@ -1477,37 +1477,55 @@ header.scrolled {
 
 @media (max-width: 768px) {
     .pricing-section-bg {
-        padding: 4rem 0 3rem;
+        padding: 3rem 0;
     }
 
     .premium-pricing-card {
-        padding: 3rem 2rem;
-        border-radius: 30px;
+        padding: 2.5rem 1.5rem;
+        border-radius: 24px;
         text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .premium-pricing-card .editorial-tag {
         text-align: left;
-        margin-left: 0;
+        margin: 0;
     }
 
     .premium-pricing-card h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
         text-align: left;
     }
 
+    .pricing-split {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .pricing-split-item {
+        align-items: flex-start;
+    }
+
+    .pricing-split-divider {
+        width: 80px;
+        height: 1px;
+        margin: 0.8rem 0;
+    }
+
     .pricing-value {
-        font-size: clamp(2.2rem, 12vw, 3.2rem);
-        white-space: nowrap;
-        margin: 1.5rem 0 0.3rem;
+        font-size: 2.5rem;
+        white-space: normal;
+        margin: 0.3rem 0;
         text-align: left;
     }
 
     .pricing-subtext {
-        font-size: 0.6rem !important;
+        font-size: 0.72rem;
         letter-spacing: 0.5px;
-        opacity: 0.7;
         text-align: left;
         margin: 0;
     }
@@ -1515,7 +1533,8 @@ header.scrolled {
     .pricing-features-list {
         grid-template-columns: 1fr;
         margin: 2rem 0;
-        gap: 1.2rem;
+        gap: 1rem;
+        text-align: left;
     }
 
     .pricing-features-list li {
@@ -2715,6 +2734,7 @@ html {
         width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        font-size: 2rem !important;
     }
 
     .subpage-hero .hero-lead {
