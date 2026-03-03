@@ -74,6 +74,11 @@ h6 {
     color: #fefae0 !important;
 }
 
+/* Subpage hero h2 in pure white */
+.subpage-hero h2 {
+    color: #ffffff !important;
+}
+
 /* Homepage hero h2 in pure white */
 .hero-home h2 {
     color: #ffffff !important;
