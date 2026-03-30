@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Animations (Intersection Observer)
+    // Scroll Animations (Intersection Observer) - Removed on request
+    /*
     const fadeElements = document.querySelectorAll('.fade-in');
 
     const appearOptions = {
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(element => {
         appearOnScroll.observe(element);
     });
+    */
 
     // Accordion Functionality (FAQ)
     const accordionHeaders = document.querySelectorAll('.accordion-header');
