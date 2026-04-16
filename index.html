@@ -7,16 +7,28 @@
     <title>Útulna Rychleby | Glamping v divočině</title>
     <meta name="description"
         content="Netradiční ubytování v Rychlebských horách. Útulna schovaná na louce, bez notifikací, jen šumění lesa.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Preconnect for external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="css/style.min.css" as="style">
+
+    <!-- Critical CSS - load synchronously -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/cookie-banner.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Non-critical CSS - load asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
+        rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link
         href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet"></noscript>
@@ -30,8 +42,7 @@
     <meta property="og:description" content="Netradiční ubytování v Rychlebských horách. Útulna schovaná na louce, bez notifikací, jen šumění lesa.">
     <meta property="og:image" content="https://utulna-rychleby.cz/Obrazky/nahled%20socialni%20site.jpg">
     <meta property="og:locale" content="cs_CZ">
-    <link rel="stylesheet" href="css/cookie-banner.css">
-    <script src="js/consent-init.js"></script>
+    <script src="js/consent-init.min.js"></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -219,7 +230,7 @@
                     </div>
                     <div class="ref-img-box">
                         <img src="Obrazky/vitejte%20v%20utulne.jpeg" alt="Vítejte v Útulně"
-                            class="vertical-img shadow-img" loading="lazy">
+                            class="vertical-img shadow-img" loading="lazy" width="843" height="562">
                     </div>
                 </div>
 
@@ -227,7 +238,7 @@
                 <div id="morning" class="ref-item item-2 fade-in">
                     <div class="ref-img-box">
                         <img src="Obrazky/rano%20ve%20vlastnim%20tempu.jpeg" alt="Ráno ve vlastním tempu"
-                            class="landscape-img shadow-img" loading="lazy">
+                            class="landscape-img shadow-img" loading="lazy" width="859" height="572">
                     </div>
                     <div class="ref-text-box text-right-align">
                         <div class="time-tag">08:00</div>
@@ -255,7 +266,7 @@
                     </div>
                     <div class="ref-img-box">
                         <img src="Obrazky/zatopene%20lomy.jpeg" alt="Zatopené lomy v Rychlebech"
-                            class="vertical-img shadow-img" loading="lazy">
+                            class="vertical-img shadow-img" loading="lazy" width="825" height="550">
                     </div>
                 </div>
 
@@ -263,7 +274,7 @@
                 <div class="ref-item item-4 fade-in">
                     <div class="ref-img-box">
                         <img src="Obrazky/hry%20pro%20pary.jpeg" alt="Společenské hry v Útulně"
-                            class="landscape-img shadow-img" loading="lazy">
+                            class="landscape-img shadow-img" loading="lazy" width="1145" height="1717">
                     </div>
                     <div class="ref-text-box text-right-align">
                         <div class="time-tag">18:00</div>
@@ -291,7 +302,7 @@
                     </div>
                     <div class="ref-img-box">
                         <img src="Obrazky/ohen%20misto%20obrazovek.jpeg" alt="Oheň místo obrazovek"
-                            class="landscape-img shadow-img" loading="lazy">
+                            class="landscape-img shadow-img" loading="lazy" width="823" height="548">
                     </div>
                     <a href="cenik.html" class="btn btn-primary story-btn">Tohle potřebuju</a>
                 </div>
@@ -316,7 +327,7 @@
         <!-- Pin Spotlight Section (Full Width) -->
         <section class="pin-section fade-in">
             <div style="position: relative;">
-                <img src="Obrazky/piny.jpeg" alt="Vybavení Útulny" class="pin-bg-img" loading="lazy">
+                <img src="Obrazky/piny.jpeg" alt="Vybavení Útulny" class="pin-bg-img" loading="lazy" width="2281" height="1520">
 
                 <!-- 1. Kuchyňské náčiní -->
                 <div id="pin-kuchyne" class="pin-marker" style="top: 35%; left: 15%;">
@@ -566,8 +577,8 @@
         </div>
     </footer>
 
-    <script src="js/script.js" defer></script>
-    <script src="js/cookie-banner.js" defer></script>
+    <script src="js/script.min.js" defer></script>
+    <script src="js/cookie-banner.min.js" defer></script>
 </body>
 
 </html>

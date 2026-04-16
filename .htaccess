@@ -1,5 +1,12 @@
+# =====================================================
+# Optimalizace webu Útulna Rychleby
+# =====================================================
+
 ErrorDocument 404 /404.html
 
+# ------------------------------------------------------
+# URL REWRITE (Clean URLs)
+# ------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -8,14 +15,93 @@ ErrorDocument 404 /404.html
 
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html
     RewriteRule ^ /%1 [R=301,L]
+
+    # WebP fallback - pokud prohlížeč podporuje WebP
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_FILENAME} (.*)\.(jpe?g|png)$
+    RewriteCond %1.webp -f
+    RewriteRule (.*)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
 </IfModule>
 
+# ------------------------------------------------------
+# GZIP KOMPRESE
+# ------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+# ------------------------------------------------------
+# BROWSER CACHING
+# ------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML - krátká cache (1 hodina)
+    ExpiresByType text/html "access plus 1 hour"
+
+    # CSS & JavaScript - 1 rok
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+
+    # Obrázky - 1 rok
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+
+    # Fonty - 1 rok
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+
+    # PDF - 1 měsíc
+    ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# ------------------------------------------------------
+# CACHE-CONTROL HEADERS
+# ------------------------------------------------------
 <IfModule mod_headers.c>
+    # Bezpečnostní hlavičky
     Header set X-Content-Type-Options "nosniff"
-    # Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-    # Header set X-Robots-Tag "noindex, nofollow"
-    # Header set Content-Security-Policy "frame-src 'self' https://*.previo.app https://booking.previo.app;"
+
+    # Cache pro statické soubory
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|css|js|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
+
+    # HTML - krátká cache
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </FilesMatch>
+
+    # Vary header pro WebP
+    Header append Vary Accept env=REDIRECT_accept
 </IfModule>
+
+# ------------------------------------------------------
+# MIME TYPES
+# ------------------------------------------------------
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddCharset UTF-8 .html .css .js .xml .json
+</IfModule>
+
+# UTF-8 Encoding
+AddDefaultCharset UTF-8
+
+# ------------------------------------------------------
+# ETAG OPTIMALIZACE
+# ------------------------------------------------------
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
