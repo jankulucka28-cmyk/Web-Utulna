@@ -1060,7 +1060,7 @@ header.scrolled {
     color: #fefae0;
     /* Krémová bílá */
     padding: 6rem 0 3rem;
-    margin-top: 2rem;
+    margin-top: 0;
     position: relative;
     border-top: 1px solid rgba(188, 108, 37, 0.2);
     /* Jemná zlatá linka */
@@ -3243,5 +3243,164 @@ html {
     .voucher-side-tab span {
         font-size: 0.5rem;
         letter-spacing: 0.08em;
+    }
+}
+
+/* Partners Premium Section (Editorial Style - Hero Feature Aesthetic) */
+.partners-premium-section {
+    position: relative;
+    padding: 70px 0;
+    background-color: var(--color-primary); /* Dark Green Background like Hero bottom */
+    border-top: none;
+    overflow: hidden;
+}
+
+.partners-premium-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.partners-premium-section h2 {
+    color: #ffffff !important;
+}
+
+.partners-premium-section .editorial-tag {
+    color: var(--color-secondary) !important;
+}
+
+.partners-premium-section .editorial-line {
+    background: linear-gradient(to bottom, transparent, var(--color-secondary)) !important;
+}
+
+/* Feature Pill style for Amazing Spotlight */
+.amazing-spotlight {
+    max-width: 550px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: #000000; /* Black Background */
+    border-radius: 60px; /* Tablet/Pill shape */
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.amazing-spotlight:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.ap-logo-link img {
+    height: 120px;
+    width: auto;
+    margin: 0 auto 2rem;
+    display: block;
+    transition: var(--transition);
+}
+
+.spotlight-text p {
+    font-size: 1.05rem;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-style: normal;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spotlight-badge {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 7px 20px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* Feature Pill style for Partner Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.logo-container {
+    height: 130px;
+    background: rgba(255, 255, 255, 0.85); /* Glassy white */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.partner-card:hover .logo-container {
+    transform: translateY(-12px);
+    background: #ffffff;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.partner-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #ffffff; /* White text on dark green section */
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-meta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-premium-section {
+        padding: 80px 0;
+    }
+    
+    .logo-container {
+        height: 150px;
     }
 }
