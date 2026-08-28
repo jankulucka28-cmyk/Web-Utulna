@@ -79,8 +79,9 @@ ErrorDocument 404 /404.html
 
     # Content Security Policy
     # 'unsafe-inline' u style-src je nutne kvuli inline style="" atributum v HTML.
-    # script-src je prisne 'self' - zadne inline skripty ani handlery web nepouziva.
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
+    # script-src zustava bez 'unsafe-inline' - web nema zadny inline skript.
+    # booking.previo.app = rezervacni system na strankach cenik a darkove-poukazy.
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://booking.previo.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://booking.previo.app; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://booking.previo.app; frame-src https://www.google.com https://booking.previo.app; connect-src 'self' https://booking.previo.app; base-uri 'self'; form-action 'self' https://booking.previo.app; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
 
     # Cache pro statické soubory
     <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|css|js|woff|woff2)$">

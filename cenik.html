@@ -145,48 +145,9 @@
                     <h2>Vyberte si svůj termín</h2>
                 </div>
 
-                <script type="text/javascript">
-                  var bookingEngineConfig = {
-                    id: '019c8fbe-9eb1-73e3-ab78-b292a30a6c09',
-                    lang: 'cs',
-                    currency: 'CZK'
-                  };
-                  var a=document.createElement('script');a.src='https://booking.previo.app/loader/';document.head.appendChild(a);
-                </script>
-                <div id="previo-booking-engine"></div>
+                <div id="previo-booking-engine" data-previo-id="019c8fbe-9eb1-73e3-ab78-b292a30a6c09" data-previo-lang="cs" data-previo-currency="CZK"></div>
+                <script src="js/previo-booking.min.js" defer></script>
 
-                <script>
-                (function () {
-                    var container = document.getElementById('previo-booking-engine');
-                    if (!container) return;
-
-                    var observer = new MutationObserver(function () {
-                        var iframe = container.querySelector('iframe');
-                        if (!iframe) return;
-                        observer.disconnect();
-
-                        window.addEventListener('message', function (e) {
-                            var data = e.data;
-                            var height = null;
-
-                            if (typeof data === 'object' && data !== null) {
-                                height = data.height || data.frameHeight || data.iframeHeight || null;
-                            } else if (typeof data === 'string') {
-                                try {
-                                    var parsed = JSON.parse(data);
-                                    height = parsed.height || parsed.frameHeight || null;
-                                } catch (err) {}
-                            }
-
-                            if (height && +height > 50) {
-                                iframe.style.height = (+height) + 'px';
-                            }
-                        });
-                    });
-
-                    observer.observe(container, { childList: true, subtree: true });
-                })();
-                </script>
 
                 <p class="booking-legal-note">Odesláním rezervace potvrzujete, že jste se seznámili s <a href="dokumenty/vop.pdf" target="_blank" rel="noopener">Obchodními podmínkami</a> a <a href="dokumenty/ubytovaci-rad.pdf" target="_blank" rel="noopener">Ubytovacím řádem</a> a souhlasíte s nimi.</p>
 
