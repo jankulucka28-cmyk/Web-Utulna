@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     // Create the floating settings trigger (the "cookie circle")
-    const trigger = document.createElement('div');
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
     trigger.className = 'cookie-settings-trigger';
     trigger.id = 'cookieTrigger';
     trigger.innerHTML = '<i class="fa-solid fa-cookie-bite"></i>';

@@ -8,7 +8,8 @@
     /* Cream */
     --color-primary: #1a2310;
     /* Dark Green - Headings/Brand */
-    --color-secondary: #bc6c25;
+    --color-secondary: #a96121;
+    --color-secondary-on-dark: #c67227;
     /* Earthy Orange - Buttons/Accents */
     --color-text: #333333;
     /* Dark Grey - Body Text */
@@ -1111,7 +1112,7 @@ header.scrolled {
 
 .footer-brand h3 {
     font-size: 2.2rem;
-    color: #bc6c25;
+    color: var(--color-secondary);
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
     /* Unified with global headings */
@@ -1150,8 +1151,8 @@ header.scrolled {
 }
 
 .social-icon:hover {
-    background: #bc6c25;
-    border-color: #bc6c25;
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
     color: #fff;
     transform: translateY(-5px) scale(1.1);
 }
@@ -1176,7 +1177,7 @@ header.scrolled {
     display: block;
     width: 40px;
     height: 1px;
-    background: linear-gradient(to right, #bc6c25, transparent);
+    background: linear-gradient(to right, var(--color-secondary), transparent);
     margin-top: 12px;
 }
 
@@ -1213,7 +1214,7 @@ header.scrolled {
     display: block;
     width: 6px;
     height: 6px;
-    background: #bc6c25;
+    background: var(--color-secondary);
     border-radius: 50%;
     opacity: 0;
     transform: translateX(-10px);
@@ -1251,7 +1252,7 @@ header.scrolled {
 }
 
 .contact-item i {
-    color: #bc6c25;
+    color: var(--color-secondary);
     font-size: 1.1rem;
 }
 
@@ -1264,7 +1265,7 @@ header.scrolled {
 
 .footer-cta {
     margin-top: 1rem;
-    background: #bc6c25;
+    background: var(--color-secondary);
     color: white !important;
     border: none;
 }
@@ -1493,7 +1494,7 @@ header.scrolled {
     font-size: 3rem;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
-    color: #bc6c25;
+    color: var(--color-secondary);
     line-height: 1.1;
     margin: 0;
 }
@@ -1531,7 +1532,7 @@ header.scrolled {
 }
 
 .pricing-features-list i {
-    color: #bc6c25;
+    color: var(--color-secondary);
     font-size: 1rem;
 }
 
@@ -1663,7 +1664,7 @@ header.scrolled {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #bc6c25;
+    color: var(--color-secondary);
     /* Accent color */
     margin-bottom: 0.8rem;
 }
@@ -1787,7 +1788,7 @@ textarea.form-input {
 .editorial-line {
     width: 1px;
     height: 30px;
-    background: linear-gradient(to bottom, transparent, #bc6c25);
+    background: linear-gradient(to bottom, transparent, var(--color-secondary));
     margin-bottom: 1rem;
 }
 
@@ -1797,7 +1798,7 @@ textarea.form-input {
     /* Slightly larger for consistency */
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: #bc6c25;
+    color: var(--color-secondary);
     margin-bottom: 0.8rem;
     font-weight: 600;
     line-height: 1.9;
@@ -1977,7 +1978,7 @@ textarea.form-input {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 0.9rem;
-    color: #bc6c25;
+    color: var(--color-secondary);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -2024,7 +2025,7 @@ textarea.form-input {
 /* Icons / Doodles */
 .ref-icon {
     font-size: 3.5rem;
-    color: #bc6c25;
+    color: var(--color-secondary);
     opacity: 0.2;
     position: absolute;
     right: 0;
@@ -3414,4 +3415,23 @@ html {
 
 .comgate-logo:hover {
     opacity: 1;
+}
+
+/* --------------------------------------------------------------
+   Kontrast: terakotovy text na tmave zelenem pozadi potrebuje
+   svetlejsi odstin, aby splnil WCAG AA (4.5:1).
+   -------------------------------------------------------------- */
+.ref-timeline .editorial-tag,
+#experience-lifestyle .editorial-tag,
+#trips-intro-dark .editorial-tag,
+.partners-premium-section .editorial-tag,
+.partners-premium-section .partner-meta,
+.footer-brand h3,
+.contact-item i,
+.pricing-value,
+.pricing-features-list i,
+.form-label,
+.time-tag,
+.ref-icon {
+    color: var(--color-secondary-on-dark);
 }

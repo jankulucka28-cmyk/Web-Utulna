@@ -31,7 +31,7 @@
 }
 
 .cookie-header i {
-    color: #bc6c25;
+    color: #a96121;
     font-size: 1.5rem;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .btn-accept {
-    background-color: #bc6c25;
+    background-color: #a96121;
     color: #ffffff;
 }
 
@@ -220,7 +220,7 @@ input:disabled+.slider {
     right: 2rem;
     width: 48px;
     height: 48px;
-    background: #bc6c25;
+    background: #a96121;
     color: #ffffff;
     border-radius: 50%;
     display: flex;
@@ -258,4 +258,12 @@ input:disabled+.slider {
         width: 44px;
         height: 44px;
     }
+}
+/* Trigger je <button> (kvuli pristupnosti) - potlacit vychozi styly tlacitka */
+.cookie-settings-trigger {
+    border: none;
+    padding: 0;
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
 }
