@@ -103,16 +103,12 @@ ErrorDocument 404 /404.html
 # blokuje konfigurace hostingu a direktiva by pri AllowOverride bez
 # "Options" shodila server chybou 500.
 
-# Skryte soubory (.DS_Store, .git, .env, .htaccess, ...)
-<FilesMatch "^\.">
-    <IfModule mod_authz_core.c>
-        Require all denied
-    </IfModule>
-    <IfModule !mod_authz_core.c>
-        Order allow,deny
-        Deny from all
-    </IfModule>
-</FilesMatch>
+# Skryte soubory a adresare (.DS_Store, .git, .env, .htaccess, ...)
+# Vyjimka pro /.well-known/ - standardizovana cesta, kterou pouziva
+# napr. ACME overeni pri obnove certifikatu nebo security.txt.
+<IfModule mod_alias.c>
+    RedirectMatch 404 "/\.(?!well-known/)"
+</IfModule>
 
 # Interni soubory, ktere nepatri na produkci
 <FilesMatch "\.(md|sh|bak|log|ini|yml|yaml|json|lock)$">
@@ -124,11 +120,6 @@ ErrorDocument 404 /404.html
         Deny from all
     </IfModule>
 </FilesMatch>
-
-# Blokovat cely adresar .git, pokud by byl omylem nasazen
-<IfModule mod_alias.c>
-    RedirectMatch 404 /\.git(/|$)
-</IfModule>
 
 # ------------------------------------------------------
 # MIME TYPES
