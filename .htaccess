@@ -74,6 +74,13 @@ ErrorDocument 404 /404.html
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Resource-Policy "same-site"
+
+    # Content Security Policy
+    # 'unsafe-inline' u style-src je nutne kvuli inline style="" atributum v HTML.
+    # script-src je prisne 'self' - zadne inline skripty ani handlery web nepouziva.
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
 
     # Cache pro statické soubory
     <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|css|js|woff|woff2)$">
@@ -87,6 +94,40 @@ ErrorDocument 404 /404.html
 
     # Vary header pro WebP
     Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+# ------------------------------------------------------
+# OCHRANA CITLIVYCH SOUBORU
+# ------------------------------------------------------
+# Poznamka: "Options -Indexes" zde zamerne neni - vypis adresaru uz
+# blokuje konfigurace hostingu a direktiva by pri AllowOverride bez
+# "Options" shodila server chybou 500.
+
+# Skryte soubory (.DS_Store, .git, .env, .htaccess, ...)
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Interni soubory, ktere nepatri na produkci
+<FilesMatch "\.(md|sh|bak|log|ini|yml|yaml|json|lock)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Blokovat cely adresar .git, pokud by byl omylem nasazen
+<IfModule mod_alias.c>
+    RedirectMatch 404 /\.git(/|$)
 </IfModule>
 
 # ------------------------------------------------------

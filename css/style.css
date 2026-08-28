@@ -3404,3 +3404,14 @@ html {
         height: 150px;
     }
 }
+/* Comgate logo v paticce - nahrazuje inline onmouseover kvuli CSP */
+.comgate-logo {
+    height: 30px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.comgate-logo:hover {
+    opacity: 1;
+}
