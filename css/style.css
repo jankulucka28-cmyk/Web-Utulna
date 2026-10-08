@@ -3273,165 +3273,54 @@ html {
     background: linear-gradient(to bottom, transparent, var(--color-secondary)) !important;
 }
 
-/* Feature Pill style for Amazing Spotlight */
-.amazing-spotlight {
-    max-width: 550px;
-    margin: 0 auto 3rem;
-    padding: 2rem;
-    background: #000000; /* Black Background */
-    border-radius: 60px; /* Tablet/Pill shape */
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    transition: var(--transition);
-}
-
-.amazing-spotlight:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-}
-
-.ap-logo-link img {
-    height: 120px;
-    width: auto;
-    margin: 0 auto 2rem;
-    display: block;
-    transition: var(--transition);
-}
-
-.spotlight-text p {
-    font-size: 1.05rem;
-    color: #ffffff;
-    font-family: var(--font-body);
-    font-style: normal;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.spotlight-badge {
-    display: inline-block;
-    margin-top: 1.2rem;
-    padding: 7px 20px;
-    background: var(--color-primary);
-    color: var(--color-white);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 50px;
-    font-weight: 600;
-}
-
-/* Feature Pill style for Partner Grid */
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.partner-card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    text-align: center;
-    transition: var(--transition);
-}
-
-.logo-container {
-    height: 130px;
-    background: rgba(255, 255, 255, 0.85); /* Glassy white */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-}
-
-.partner-card:hover .logo-container {
-    transform: translateY(-12px);
-    background: #ffffff;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-}
-
-.logo-container img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-.partner-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: #ffffff; /* White text on dark green section */
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.partner-meta {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-secondary);
-    font-weight: 600;
-}
-
-@media (max-width: 992px) {
-    .partners-grid {
-        grid-template-columns: 1fr;
-        max-width: 380px;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .partners-premium-section {
-        padding: 80px 0;
-    }
-    
-    .logo-container {
-        height: 150px;
-    }
-}
-/* Comgate logo v paticce - nahrazuje inline onmouseover kvuli CSP */
-.comgate-logo {
-    height: 30px;
-    object-fit: contain;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-.comgate-logo:hover {
-    opacity: 1;
-}
-
-/* --------------------------------------------------------------
-   Kontrast: terakotovy text na tmave zelenem pozadi potrebuje
-   svetlejsi odstin, aby splnil WCAG AA (4.5:1).
-   -------------------------------------------------------------- */
-.ref-timeline .editorial-tag,
-#experience-lifestyle .editorial-tag,
-#trips-intro-dark .editorial-tag,
-.partners-premium-section .editorial-tag,
-.partners-premium-section .partner-meta,
-.footer-brand h3,
-.contact-item i,
-.pricing-value,
-.pricing-features-list i,
-.form-label,
-.time-tag,
 .ref-icon {
     color: var(--color-secondary-on-dark);
 }
+
+/* Členství (Amazing Places, Kouzelné chaloupky) v patičce */
+.footer-members {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.footer-members-label {
+    font-family: var(--font-base);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(254, 250, 224, 0.5);
+}
+
+.footer-members-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-members-logos img {
+    height: 100px;
+    width: auto;
+    display: block;
+    border-radius: 0; /* globální zaoblení obrázků by loga ořezalo */
+    opacity: 0.85;
+    transition: var(--transition);
+}
+
+.footer-members-logos img.footer-members-ap {
+    height: 50px;
+}
+
+.footer-members-logos a:hover img {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Na mobilu (do 768px) je patička zarovnaná vlevo, centrujeme jen na tabletu */
+@media (min-width: 769px) and (max-width: 900px) {
+    .footer-members {
+        align-items: center;
+    }
+}
+
