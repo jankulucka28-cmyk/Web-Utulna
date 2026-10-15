@@ -3337,3 +3337,22 @@ html {
 .footer-bottom .footer-credit a:hover {
     color: rgba(254, 250, 224, 0.8);
 }
+
+/* Typografie: žádné osamocené slovo na posledním řádku odstavce,
+   nadpisy s vyrovnanou délkou řádků */
+p,
+li,
+dd,
+blockquote,
+figcaption {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
