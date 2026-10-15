@@ -3324,3 +3324,16 @@ html {
     }
 }
 
+
+.footer-bottom .footer-credit {
+    margin-top: 0.5rem;
+}
+
+.footer-bottom .footer-credit a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.footer-bottom .footer-credit a:hover {
+    color: rgba(254, 250, 224, 0.8);
+}
