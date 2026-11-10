@@ -4,9 +4,7 @@
 
 ### 1. Minifikace CSS a JavaScript
 - **style.css** → **style.min.css** (úspora 32.7%, 23 KB)
-- **cookie-banner.css** → **cookie-banner.min.css** (úspora 27.6%, 1.3 KB)
 - **script.js** → **script.min.js** (úspora 48.0%, 2.8 KB)
-- **cookie-banner.js** → **cookie-banner.min.js** (úspora 31.8%, 1.8 KB)
 - **consent-init.js** → **consent-init.min.js** (úspora 35.2%, 0.4 KB)
 
 **Celková úspora:** ~30 KB minifikovaného kódu
@@ -104,9 +102,7 @@ Skript automaticky:
 
 ### Soubory, které byly vytvořeny:
 - ✅ **css/style.min.css**
-- ✅ **css/cookie-banner.min.css**
 - ✅ **js/script.min.js**
-- ✅ **js/cookie-banner.min.js**
 - ✅ **js/consent-init.min.js**
 - ✅ **convert-to-webp.sh** (skript pro konverzi)
 
