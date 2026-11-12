@@ -9,6 +9,13 @@ ErrorDocument 404 /404.html
 # ------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # www -> bez www (301), zachova cestu i parametry.
+    # Presmerovani http -> https resi hosting/CDN jeste pred Apachem,
+    # proto tu zamerne neni pravidlo na %{HTTPS} (za CDN by hrozila smycka).
+    RewriteCond %{HTTP_HOST} ^www\.utulna-rychleby\.cz$ [NC]
+    RewriteRule ^ https://utulna-rychleby.cz%{REQUEST_URI} [R=301,L,NE]
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^([^\.]+)$ $1.html [NC,L]
